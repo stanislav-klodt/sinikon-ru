@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 
 const navigation = [
@@ -34,22 +35,22 @@ export function Header() {
       <div className="container-main">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <span className="text-xl md:text-2xl font-bold tracking-tight text-foreground">
               SINIKON
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -89,14 +90,14 @@ export function Header() {
           <div className="container-main py-4">
             <nav className="flex flex-col gap-1">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   onClick={() => setIsOpen(false)}
                   className="px-3 py-3 text-base font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </nav>
             <div className="mt-4 pt-4 border-t border-border">
