@@ -13,17 +13,16 @@ const productLinks = [
 ];
 
 const docsLinks = [
-  { name: "Сертификаты", href: "/certificates/" },
-  { name: "Гарантия", href: "/information/warranty/" },
-  { name: "Материалы", href: "/information/materials/" },
+  { name: "Сертификаты", href: "/documents/#certificates" },
+  { name: "Гарантия", href: "/documents/#warranty" },
+  { name: "Материалы", href: "/documents/#promo" },
 ];
 
 const companyLinks = [
   { name: "О компании", href: "/company/" },
   { name: "Наши объекты", href: "/objects/" },
-  { name: "Спонсорство", href: "/company/sponsorship/" },
-  { name: "Вакансии", href: "/company/jobs/" },
-  { name: "Видео", href: "/company/video/" },
+  { name: "Новости", href: "/news/" },
+  { name: "Контакты", href: "/contacts/" },
 ];
 
 export function Footer() {

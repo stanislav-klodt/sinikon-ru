@@ -30,7 +30,7 @@ export function PromoSection({ searchQuery }: PromoSectionProps) {
   if (filteredDocs.length === 0) return null;
 
   return (
-    <section className="py-8 md:py-12">
+    <section id="promo" className="py-8 md:py-12 scroll-mt-24">
       <div className="container-main">
         <div className="mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
