@@ -1,45 +1,61 @@
 import { ArrowRight, Search } from "lucide-react";
+import iconStandart from "@/assets/icons/icon-standart.png";
+import iconComfort from "@/assets/icons/icon-comfort.png";
+import iconRainflow from "@/assets/icons/icon-rainflow.png";
+import iconUniversal from "@/assets/icons/icon-universal.png";
+import iconNpvh from "@/assets/icons/icon-npvh.png";
+import iconTraps from "@/assets/icons/icon-traps.png";
+import iconTools from "@/assets/icons/icon-tools.png";
+import iconHeating from "@/assets/icons/icon-heating.png";
 
 const products = [
   {
     name: "SINIKON Standart",
     description: "Внутренняя канализация",
     link: "/catalog/vnutrennyaya-kanalizatsiya-sinikon-standart/",
+    icon: iconStandart,
   },
   {
     name: "Sinikon Comfort Plus",
     description: "Пониженный уровень шума",
     link: "/catalog/kanalizatsiya-s-ponizhennym-urovnem-shuma-sinikon-comfort-plus/",
+    icon: iconComfort,
   },
   {
     name: "Rain Flow",
     description: "Внутренние водостоки",
     link: "/catalog/vnutrennie-vodostoki-rain-flow/",
+    icon: iconRainflow,
   },
   {
     name: "SINIKON Universal",
     description: "Наружная канализация",
     link: "/catalog/naruzhnaya-kanalizatsiya-sinikon-universal/",
+    icon: iconUniversal,
   },
   {
     name: "SINIKON НПВХ",
     description: "Наружная канализация НПВХ",
     link: "/catalog/naruzhnaya-kanalizatsiya-sinikon-npvkh/",
+    icon: iconNpvh,
   },
   {
     name: "Трапы",
     description: "Для канализационных систем",
     link: "/catalog/trapy-dlya-kanalizatsionnykh-sistem/",
+    icon: iconTraps,
   },
   {
     name: "Инструменты и монтаж",
     description: "Крепёж, смазка, инструмент",
     link: "/catalog/instrumenty-krepyezh-i-smazka/",
+    icon: iconTools,
   },
   {
     name: "Отопление и водоснабжение",
     description: "PE-RT / PE-X / фитинги",
     link: "/catalog/thermoline-pe-xb-evoh/",
+    icon: iconHeating,
   },
 ];
 
@@ -66,6 +82,13 @@ export function ProductsSection() {
               className="card-product group"
               style={{ animationDelay: `${index * 50}ms` }}
             >
+              <div className="w-16 h-16 mb-4 flex items-center justify-center">
+                <img 
+                  src={product.icon} 
+                  alt={product.name} 
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
                 {product.name}
               </h3>
