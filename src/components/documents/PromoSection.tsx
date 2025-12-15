@@ -1,7 +1,6 @@
-import { useState, useMemo } from "react";
-import { documents, promoTypes } from "@/data/documents";
+import { useMemo } from "react";
+import { documents } from "@/data/documents";
 import { DocumentCard } from "./DocumentCard";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen } from "lucide-react";
 
 interface PromoSectionProps {
@@ -9,8 +8,6 @@ interface PromoSectionProps {
 }
 
 export function PromoSection({ searchQuery }: PromoSectionProps) {
-  const [activeTab, setActiveTab] = useState("all");
-
   const filteredDocs = useMemo(() => {
     return documents.filter((doc) => {
       if (doc.category !== "promo") return false;
@@ -22,14 +19,15 @@ export function PromoSection({ searchQuery }: PromoSectionProps) {
         if (!matchesTitle && !matchesTags) return false;
       }
 
-      if (activeTab !== "all" && doc.type !== activeTab) return false;
-
       return true;
     });
-  }, [searchQuery, activeTab]);
+  }, [searchQuery]);
 
   const manualDocs = filteredDocs.filter(doc => doc.type === 'manual');
-  const otherDocs = filteredDocs.filter(doc => doc.type !== 'manual');
+  const brochureDocs = filteredDocs.filter(doc => doc.type === 'brochure');
+  const leafletDocs = filteredDocs.filter(doc => doc.type === 'leaflet');
+
+  if (filteredDocs.length === 0) return null;
 
   return (
     <section className="py-8 md:py-12">
@@ -62,30 +60,33 @@ export function PromoSection({ searchQuery }: PromoSectionProps) {
           </div>
         )}
 
-        {/* Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="mb-6">
-            <TabsTrigger value="all">Все</TabsTrigger>
-            <TabsTrigger value="brochure">Брошюры</TabsTrigger>
-            <TabsTrigger value="leaflet">Листовки</TabsTrigger>
-          </TabsList>
+        {/* Brochures */}
+        {brochureDocs.length > 0 && (
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              Брошюры и каталоги
+            </h3>
+            <div className="space-y-3">
+              {brochureDocs.map((doc) => (
+                <DocumentCard key={doc.id} document={doc} />
+              ))}
+            </div>
+          </div>
+        )}
 
-          <TabsContent value={activeTab} className="mt-0">
-            {otherDocs.length > 0 ? (
-              <div className="space-y-3">
-                {otherDocs.map((doc) => (
-                  <DocumentCard key={doc.id} document={doc} />
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-muted-foreground">
-                  Документы не найдены. Попробуйте изменить параметры поиска.
-                </p>
-              </div>
-            )}
-          </TabsContent>
-        </Tabs>
+        {/* Leaflets */}
+        {leafletDocs.length > 0 && (
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              Листовки
+            </h3>
+            <div className="space-y-3">
+              {leafletDocs.map((doc) => (
+                <DocumentCard key={doc.id} document={doc} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

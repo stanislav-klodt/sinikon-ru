@@ -1,13 +1,6 @@
-import { useState, useMemo } from "react";
-import { Document, documents, documentLines, documentTypes } from "@/data/documents";
+import { useMemo } from "react";
+import { documents } from "@/data/documents";
 import { DocumentCard } from "./DocumentCard";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Award } from "lucide-react";
 
 interface CertificatesSectionProps {
@@ -15,9 +8,6 @@ interface CertificatesSectionProps {
 }
 
 export function CertificatesSection({ searchQuery }: CertificatesSectionProps) {
-  const [lineFilter, setLineFilter] = useState("all");
-  const [typeFilter, setTypeFilter] = useState("all");
-
   const filteredDocs = useMemo(() => {
     return documents.filter((doc) => {
       if (doc.category !== "certificates") return false;
@@ -29,15 +19,14 @@ export function CertificatesSection({ searchQuery }: CertificatesSectionProps) {
         if (!matchesTitle && !matchesTags) return false;
       }
 
-      if (lineFilter !== "all" && doc.line !== lineFilter) return false;
-      if (typeFilter !== "all" && doc.type !== typeFilter) return false;
-
       return true;
     });
-  }, [searchQuery, lineFilter, typeFilter]);
+  }, [searchQuery]);
 
   const isoDocs = filteredDocs.filter(doc => doc.type === 'iso' || doc.id === 'made-in-russia');
   const declarationDocs = filteredDocs.filter(doc => doc.type === 'declaration' || (doc.type === 'certificate' && doc.id !== 'made-in-russia'));
+
+  if (filteredDocs.length === 0) return null;
 
   return (
     <section className="py-8 md:py-12">
@@ -49,35 +38,6 @@ export function CertificatesSection({ searchQuery }: CertificatesSectionProps) {
           <p className="text-muted-foreground">
             Документы соответствия по основным линейкам.
           </p>
-        </div>
-
-        {/* Filters */}
-        <div className="flex flex-wrap gap-3 mb-6">
-          <Select value={lineFilter} onValueChange={setLineFilter}>
-            <SelectTrigger className="w-[180px] bg-background">
-              <SelectValue placeholder="Линейка" />
-            </SelectTrigger>
-            <SelectContent>
-              {documentLines.map((line) => (
-                <SelectItem key={line.value} value={line.value}>
-                  {line.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-
-          <Select value={typeFilter} onValueChange={setTypeFilter}>
-            <SelectTrigger className="w-[180px] bg-background">
-              <SelectValue placeholder="Тип документа" />
-            </SelectTrigger>
-            <SelectContent>
-              {documentTypes.map((type) => (
-                <SelectItem key={type.value} value={type.value}>
-                  {type.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
         </div>
 
         {/* Declarations */}
@@ -110,14 +70,6 @@ export function CertificatesSection({ searchQuery }: CertificatesSectionProps) {
                 <DocumentCard key={doc.id} document={doc} />
               ))}
             </div>
-          </div>
-        )}
-
-        {filteredDocs.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">
-              Документы не найдены. Попробуйте изменить параметры поиска.
-            </p>
           </div>
         )}
       </div>
