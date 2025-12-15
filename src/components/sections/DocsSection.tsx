@@ -58,15 +58,6 @@ export function DocsSection() {
             </div>
           ))}
         </div>
-
-        {/* Note */}
-        <p className="text-sm text-muted-foreground border-l-2 border-border pl-4">
-          Важно: сайт не является интернет-магазином. Для закупки — раздел{" "}
-          <a href="#buy" className="text-primary hover:underline">
-            «Где купить»
-          </a>
-          .
-        </p>
       </div>
     </section>
   );
