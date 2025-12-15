@@ -7,7 +7,7 @@ const navigation = [
   { name: "Документы", href: "/documents/" },
   { name: "Где купить", href: "/distributors/" },
   { name: "О компании", href: "/company/" },
-  { name: "Новости", href: "#news" },
+  { name: "Новости", href: "/news/" },
   { name: "Контакты", href: "/contacts/" },
 ];
 
