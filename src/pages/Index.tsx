@@ -1,12 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Header } from "@/components/Header";
+import { MobileBottomBar } from "@/components/MobileBottomBar";
+import { Footer } from "@/components/Footer";
+import { BIMModal } from "@/components/BIMModal";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { ProductsSection } from "@/components/sections/ProductsSection";
+import { DocsSection } from "@/components/sections/DocsSection";
+import { DesignersSection } from "@/components/sections/DesignersSection";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { NewsSection } from "@/components/sections/NewsSection";
+import { BuySection } from "@/components/sections/BuySection";
+import { AboutSection } from "@/components/sections/AboutSection";
 
 const Index = () => {
+  const [isBIMOpen, setIsBIMOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main>
+        <HeroSection />
+        <ProductsSection />
+        <DocsSection />
+        <DesignersSection onOpenBIM={() => setIsBIMOpen(true)} />
+        <ProjectsSection />
+        <NewsSection />
+        <BuySection />
+        <AboutSection />
+      </main>
+
+      <Footer />
+      <MobileBottomBar />
+      
+      <BIMModal isOpen={isBIMOpen} onClose={() => setIsBIMOpen(false)} />
     </div>
   );
 };
