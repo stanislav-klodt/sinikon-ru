@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-
+import factoryImage from "@/assets/factory.jpg";
 export function AboutSection() {
   return (
     <section id="about" className="py-20 md:py-28 lg:py-32">
@@ -28,9 +28,9 @@ export function AboutSection() {
           {/* Image */}
           <div className="aspect-[4/3] rounded-2xl overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"
-              alt="Производство SINIKON"
-              className="w-full h-full object-cover"
+              src={factoryImage}
+              alt="Завод SINIKON"
+              className="w-full h-full object-cover -scale-x-100"
             />
           </div>
         </div>
