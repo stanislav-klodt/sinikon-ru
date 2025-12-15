@@ -3,7 +3,7 @@ import { Menu, X, Phone } from "lucide-react";
 
 const navigation = [
   { name: "Продукция", href: "/catalog/" },
-  { name: "Проектировщикам", href: "#designers" },
+  { name: "Проектировщикам", href: "/projectors/" },
   { name: "Документы", href: "#docs" },
   { name: "Где купить", href: "#buy" },
   { name: "О компании", href: "/company/" },
