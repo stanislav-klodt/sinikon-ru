@@ -4,7 +4,7 @@ import { Menu, X, Phone } from "lucide-react";
 const navigation = [
   { name: "Продукция", href: "/catalog/" },
   { name: "Проектировщикам", href: "/projectors/" },
-  { name: "Документы", href: "#docs" },
+  { name: "Документы", href: "/documents/" },
   { name: "Где купить", href: "/distributors/" },
   { name: "О компании", href: "/company/" },
   { name: "Новости", href: "#news" },
