@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 
 const navigation = [
-  { name: "Продукция", href: "#products" },
+  { name: "Продукция", href: "/catalog/" },
   { name: "Проектировщикам", href: "#designers" },
   { name: "Документы", href: "#docs" },
   { name: "Где купить", href: "#buy" },
-  { name: "О компании", href: "#about" },
+  { name: "О компании", href: "/company/" },
   { name: "Новости", href: "#news" },
   { name: "Контакты", href: "/contacts/" },
 ];
