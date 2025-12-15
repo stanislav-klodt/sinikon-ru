@@ -22,9 +22,9 @@ const Index = () => {
       <main>
         <HeroSection />
         <ProductsSection />
+        <ProjectsSection />
         <DocsSection />
         <DesignersSection onOpenBIM={() => setIsBIMOpen(true)} />
-        <ProjectsSection />
         <NewsSection />
         <BuySection />
         <AboutSection />
