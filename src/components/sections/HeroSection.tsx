@@ -13,7 +13,7 @@ export function HeroSection() {
       />
 
       <div className="container-main relative z-20 py-24 md:py-32">
-        <div className="max-w-2xl">
+        <div>
           <h1 className="heading-xl text-background mb-6 animate-fade-up">
             SINIKON — производитель труб
             <br className="hidden md:block" /> и&nbsp;фитингов для систем канализации
