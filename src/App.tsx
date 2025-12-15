@@ -21,7 +21,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/sinikon-ru">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/company" element={<Company />} />
