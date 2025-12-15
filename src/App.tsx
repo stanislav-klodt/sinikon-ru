@@ -9,6 +9,7 @@ import Catalog from "./pages/Catalog";
 import ProductLine from "./pages/ProductLine";
 import Projectors from "./pages/Projectors";
 import Distributors from "./pages/Distributors";
+import Documents from "./pages/Documents";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
@@ -30,6 +31,8 @@ const App = () => (
           <Route path="/projectors/" element={<Projectors />} />
           <Route path="/distributors" element={<Distributors />} />
           <Route path="/distributors/" element={<Distributors />} />
+          <Route path="/documents" element={<Documents />} />
+          <Route path="/documents/" element={<Documents />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
