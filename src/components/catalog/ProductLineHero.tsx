@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
@@ -28,7 +29,9 @@ export function ProductLineHero({ name, slug, purpose, description, facts }: Pro
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/catalog/">Продукция</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link to="/catalog/">Продукция</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
 import iconStandart from "@/assets/icons/icon-standart.png";
 import iconComfort from "@/assets/icons/icon-comfort.png";
@@ -76,9 +77,9 @@ export function ProductsSection() {
         {/* Products grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
           {products.map((product, index) => (
-            <a
+            <Link
               key={product.name}
-              href={product.link}
+              to={product.link}
               className="card-product group"
               style={{ animationDelay: `${index * 50}ms` }}
             >
@@ -99,7 +100,7 @@ export function ProductsSection() {
                 Открыть
                 <ArrowRight className="w-4 h-4" />
               </span>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -121,13 +122,13 @@ export function ProductsSection() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
-              <a href="/catalog/" className="btn-primary">
+              <Link to="/catalog/" className="btn-primary">
                 Открыть каталог
                 <ArrowRight className="w-5 h-5" />
-              </a>
-              <a href="/catalog/pdf/" className="btn-ghost">
+              </Link>
+              <Link to="/catalog/pdf/" className="btn-ghost">
                 Скачать каталог PDF
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 
 const regions = [
@@ -44,20 +45,20 @@ export function BuySection() {
             <ul className="space-y-3 mb-8">
               {regions.map((region) => (
                 <li key={region.name}>
-                  <a
-                    href={region.link}
+                  <Link
+                    to={region.link}
                     className="flex items-center justify-between py-2 text-foreground hover:text-primary transition-colors group"
                   >
                     <span>{region.name}</span>
                     <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
-            <a href="/distributors/" className="btn-primary w-full">
+            <Link to="/distributors/" className="btn-primary w-full">
               Список дистрибьюторов
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

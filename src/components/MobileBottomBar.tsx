@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Grid3X3, MapPin } from "lucide-react";
 
 export function MobileBottomBar() {
@@ -29,14 +30,14 @@ export function MobileBottomBar() {
       }`}
     >
       <div className="flex">
-        <a href="/catalog/" className="btn-mobile-fixed border-r border-border/50">
+        <Link to="/catalog/" className="btn-mobile-fixed border-r border-border/50">
           <Grid3X3 className="w-5 h-5" />
           <span>Каталог</span>
-        </a>
-        <a href="#buy" className="btn-mobile-fixed bg-foreground text-background">
+        </Link>
+        <Link to="/distributors/" className="btn-mobile-fixed bg-foreground text-background">
           <MapPin className="w-5 h-5" />
           <span>Где купить</span>
-        </a>
+        </Link>
       </div>
     </div>
   );

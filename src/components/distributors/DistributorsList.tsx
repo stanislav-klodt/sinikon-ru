@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DistributorCard } from './DistributorCard';
@@ -36,7 +37,7 @@ export function DistributorsList({ distributors, searchQuery }: DistributorsList
           Выберите ближайший город или напишите нам — подскажем, где купить.
         </p>
         <Button asChild variant="outline">
-          <a href="/contacts/">Написать в техподдержку</a>
+          <Link to="/contacts/">Написать в техподдержку</Link>
         </Button>
       </div>
     );

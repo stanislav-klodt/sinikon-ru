@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
 export function HeroSection() {
@@ -22,13 +23,13 @@ export function HeroSection() {
             Внутренняя и наружная канализация, водостоки
             <br className="hidden md:block" /> и инженерные системы.
           </p>
-          <a
-            href="/catalog/"
+          <Link
+            to="/catalog/"
             className="btn-primary inline-flex animate-fade-up delay-200"
           >
             Каталог продукции
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
           
           {/* Navigation arrows */}
           <div className="flex items-center gap-4 mt-12 md:mt-16 animate-fade-up delay-300">

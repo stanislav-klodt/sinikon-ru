@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ChevronDown, Download, FileText, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -150,10 +151,10 @@ export function LineDocumentsSection() {
             </p>
           </div>
           <Button variant="outline" asChild className="gap-2 flex-shrink-0">
-            <a href="/documents/">
+            <Link to="/documents/">
               Раздел Документы
               <ExternalLink className="w-4 h-4" />
-            </a>
+            </Link>
           </Button>
         </div>
 

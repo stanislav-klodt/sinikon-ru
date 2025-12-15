@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -37,10 +38,10 @@ export function CatalogHero({ searchQuery, onSearchChange }: CatalogHeroProps) {
           
           <div className="flex flex-col sm:flex-row gap-3">
             <Button asChild>
-              <a href="/documents/">Скачать материалы</a>
+              <Link to="/documents/">Скачать материалы</Link>
             </Button>
             <Button variant="outline" asChild>
-              <a href="#buy">Где купить</a>
+              <Link to="/distributors/">Где купить</Link>
             </Button>
           </div>
         </div>
