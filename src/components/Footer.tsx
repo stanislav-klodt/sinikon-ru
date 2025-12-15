@@ -21,6 +21,7 @@ const docsLinks = [
 const companyLinks = [
   { name: "О компании", href: "/company/" },
   { name: "Наши объекты", href: "/objects/" },
+  { name: "Вакансии", href: "/vacancies/" },
   { name: "Новости", href: "/news/" },
   { name: "Контакты", href: "/contacts/" },
 ];
