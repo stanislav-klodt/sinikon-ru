@@ -7,21 +7,21 @@ const services = [
     title: "Сертификаты и паспорта",
     description: "Документы по линейкам и артикулам.",
     cta: "Открыть сертификаты",
-    link: "/certificates/",
+    link: "/documents/#certificates",
   },
   {
     icon: Sparkles,
     title: "Характеристики и преимущества",
     description: "Ключевые свойства материалов и систем.",
     cta: "Смотреть характеристики",
-    link: "/information/advantages/",
+    link: "/documents/#warranty",
   },
   {
     icon: FolderDown,
     title: "Информационные материалы",
     description: "Каталоги, презентации, инструкции.",
     cta: "Скачать материалы",
-    link: "/information/materials/",
+    link: "/documents/#promo",
   },
 ];
 
