@@ -14,6 +14,7 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import Contacts from "./pages/Contacts";
 import Objects from "./pages/Objects";
+import Vacancies from "./pages/Vacancies";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
@@ -47,6 +48,8 @@ const App = () => (
           <Route path="/objects/" element={<Objects />} />
           <Route path="/company/objects" element={<Objects />} />
           <Route path="/company/objects/" element={<Objects />} />
+          <Route path="/vacancies" element={<Vacancies />} />
+          <Route path="/vacancies/" element={<Vacancies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
