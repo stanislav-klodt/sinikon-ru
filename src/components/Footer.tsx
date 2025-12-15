@@ -20,7 +20,7 @@ const docsLinks = [
 
 const companyLinks = [
   { name: "О компании", href: "/company/" },
-  { name: "Наши объекты", href: "/company/objects/" },
+  { name: "Наши объекты", href: "/objects/" },
   { name: "Спонсорство", href: "/company/sponsorship/" },
   { name: "Вакансии", href: "/company/jobs/" },
   { name: "Видео", href: "/company/video/" },

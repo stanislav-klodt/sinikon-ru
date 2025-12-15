@@ -3,29 +3,24 @@ import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    name: "Novosibirsk Marriotte Hotel",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-    link: "/company/objects/",
+    name: "Novosibirsk Marriott Hotel",
+    image: "https://www.sinikon.ru/upload/iblock/bd0/bd0fc836a057ea4fc4bd74af3bc1490a.jpg",
   },
   {
-    name: 'Аэропорт "Кневичи"',
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
-    link: "/company/objects/",
+    name: "Аэропорт «Кневичи»",
+    image: "https://www.sinikon.ru/upload/iblock/9cb/9cbcded569950767e242078e9ff6ed5b.jpg",
   },
   {
-    name: "Галерея Новосибирск",
-    image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80",
-    link: "/company/objects/",
+    name: "Новосибирск Галерея",
+    image: "https://www.sinikon.ru/upload/iblock/c6c/c6c0e8fea43399e0a2627a6f2fb50432.jpg",
   },
   {
     name: "Открытие Арена",
-    image: "https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=800&q=80",
-    link: "/company/objects/",
+    image: "https://www.sinikon.ru/upload/iblock/6ea/6ea04247b683c46ba7099c9612596a3e.jpg",
   },
   {
     name: "Приморский театр оперы и балета",
-    image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80",
-    link: "/company/objects/",
+    image: "https://www.sinikon.ru/upload/iblock/32f/32fd152bc127571a733f25c61ee1b6ae.jpg",
   },
 ];
 
@@ -47,7 +42,7 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Link
               key={project.name}
-              to={project.link}
+              to="/objects/"
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -72,7 +67,7 @@ export function ProjectsSection() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link to="/company/objects/" className="btn-ghost">
+          <Link to="/objects/" className="btn-ghost">
             Все объекты
             <ArrowRight className="w-5 h-5" />
           </Link>
