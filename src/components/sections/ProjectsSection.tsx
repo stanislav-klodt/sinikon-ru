@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const projects = [
@@ -44,9 +45,9 @@ export function ProjectsSection() {
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10">
           {projects.map((project, index) => (
-            <a
+            <Link
               key={project.name}
-              href={project.link}
+              to={project.link}
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -65,16 +66,16 @@ export function ProjectsSection() {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* CTA */}
         <div className="text-center">
-          <a href="/company/objects/" className="btn-ghost">
+          <Link to="/company/objects/" className="btn-ghost">
             Все объекты
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

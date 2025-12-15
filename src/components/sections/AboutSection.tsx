@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import factoryImage from "@/assets/factory.jpg";
 export function AboutSection() {
@@ -19,10 +20,10 @@ export function AboutSection() {
               из современных полимерных материалов — собственного производства и
               наших европейских партнёров.
             </p>
-            <a href="/company/" className="btn-primary">
+            <Link to="/company/" className="btn-primary">
               Подробнее о компании
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
 
           {/* Image */}

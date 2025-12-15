@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Search, Package, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -46,7 +47,7 @@ export function HowToUse() {
         </div>
         
         <Button variant="outline" asChild>
-          <a href="/documents/">Открыть документы</a>
+          <Link to="/documents/">Открыть документы</Link>
         </Button>
       </div>
     </section>

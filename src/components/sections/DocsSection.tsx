@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, FileCheck, Sparkles, FolderDown } from "lucide-react";
 
 const services = [
@@ -51,10 +52,10 @@ export function DocsSection() {
               </div>
               <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
               <p className="text-body-sm flex-grow mb-6">{service.description}</p>
-              <a href={service.link} className="link-arrow text-sm mt-auto">
+              <Link to={service.link} className="link-arrow text-sm mt-auto">
                 {service.cta}
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

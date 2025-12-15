@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProductLineHero } from "@/components/catalog/ProductLineHero";
@@ -286,9 +286,9 @@ export default function ProductLine() {
             <h1 className="text-2xl font-bold text-foreground mb-4">
               Линейка не найдена
             </h1>
-            <a href="/catalog/" className="text-primary hover:underline">
+            <Link to="/catalog/" className="text-primary hover:underline">
               Вернуться в каталог
-            </a>
+            </Link>
           </div>
         </main>
         <Footer />

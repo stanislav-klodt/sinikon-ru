@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const news = [
@@ -40,9 +41,9 @@ export function NewsSection() {
         {/* News grid */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-10">
           {news.map((item, index) => (
-            <a
+            <Link
               key={item.title}
-              href={item.link}
+              to={item.link}
               className="card-product group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -55,16 +56,16 @@ export function NewsSection() {
                 Читать
                 <ArrowRight className="w-4 h-4" />
               </span>
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* CTA */}
         <div className="text-center">
-          <a href="/news/" className="btn-ghost">
+          <Link to="/news/" className="btn-ghost">
             Все новости
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

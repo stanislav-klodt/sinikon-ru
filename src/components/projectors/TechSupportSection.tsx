@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Mail, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -72,9 +73,9 @@ export function TechSupportSection({ onOpenModal }: TechSupportSectionProps) {
 
         <p className="text-sm text-muted-foreground">
           Запросы по закупке и наличию — через{" "}
-          <a href="/distributors/" className="text-primary hover:underline">
+          <Link to="/distributors/" className="text-primary hover:underline">
             дистрибьюторов
-          </a>
+          </Link>
           .
         </p>
       </div>

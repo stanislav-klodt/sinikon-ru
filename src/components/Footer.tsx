@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const productLinks = [
@@ -32,9 +33,9 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-12">
           {/* Logo and contacts */}
           <div className="lg:col-span-2">
-            <a href="/" className="text-2xl font-bold mb-6 block">
+            <Link to="/" className="text-2xl font-bold mb-6 block">
               SINIKON
-            </a>
+            </Link>
             <div className="space-y-4 text-background/70">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
@@ -70,12 +71,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {productLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-background/70 hover:text-background transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,12 +88,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {docsLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-background/70 hover:text-background transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -104,12 +105,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-background/70 hover:text-background transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -122,12 +123,12 @@ export function Footer() {
             © 2009–2025 SINIKON. Все права защищены.
           </p>
           <div className="flex items-center gap-6">
-            <a
-              href="/privacy/"
+            <Link
+              to="/privacy/"
               className="text-sm text-background/50 hover:text-background/80 transition-colors"
             >
               Политика обработки персональных данных
-            </a>
+            </Link>
           </div>
         </div>
       </div>
