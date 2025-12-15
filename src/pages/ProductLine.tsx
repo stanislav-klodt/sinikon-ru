@@ -302,6 +302,7 @@ export default function ProductLine() {
       <main>
         <ProductLineHero
           name={data.name}
+          slug={slug || "sinikon-standart"}
           purpose={data.purpose}
           description={data.description}
           facts={data.facts}
