@@ -29,7 +29,55 @@ interface NomenclatureItem {
   length?: string;
   article: string;
   packaging: number;
+  image?: string;
 }
+
+// Mapping of product types to images from sinikon.ru
+const productImages: Record<string, string> = {
+  // Трубы
+  "pipe": "https://www.sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
+  // Отводы
+  "elbow-15": "https://www.sinikon.ru/upload/iblock/40c/40ca89172e683da7e7e99dd82f9176a9.png",
+  "elbow-30": "https://www.sinikon.ru/upload/iblock/9c4/9c47d0ffa449955ebcd74f23211b8e6f.png",
+  "elbow-45": "https://www.sinikon.ru/upload/iblock/044/044454c1cdae9f3a539d6c1ce530de01.png",
+  "elbow-67": "https://www.sinikon.ru/upload/iblock/166/16606fb8c98020e12774dc61cb148b84.png",
+  "elbow-87": "https://www.sinikon.ru/upload/iblock/f6b/f6bddbef23372d7e5aff136d1f0ad035.png",
+  // Тройники
+  "tee-45": "https://www.sinikon.ru/upload/iblock/2c5/2c51ca637f8b30fa7022fdb9a58b5d18.png",
+  "tee-67": "https://www.sinikon.ru/upload/iblock/62c/62c86f34e0a3514bafcd6187e89de82c.png",
+  "tee-87": "https://www.sinikon.ru/upload/iblock/8ef/8ef734149e6ad1114959ea3211427ecb.png",
+  // Крестовины
+  "cross-2plane": "https://www.sinikon.ru/upload/iblock/268/268e8da74fede1a4ed58b1bc9b9d78ae.png",
+  "cross-2side": "https://www.sinikon.ru/upload/iblock/401/4018fec71ef237d411c6e66164935082.jpg",
+  "cross-1plane": "https://www.sinikon.ru/upload/iblock/9ca/9ca1a2f932226de093d9227f46baddd4.png",
+};
+
+// Helper to get image for a product based on type and angle
+const getProductImage = (item: NomenclatureItem): string => {
+  if (item.image) return item.image;
+  
+  if (item.type === "pipe") return productImages["pipe"];
+  
+  if (item.type === "elbow") {
+    if (item.angle === "15") return productImages["elbow-15"];
+    if (item.angle === "30") return productImages["elbow-30"];
+    if (item.angle === "45") return productImages["elbow-45"];
+    if (item.angle === "67") return productImages["elbow-67"];
+    if (item.angle === "87") return productImages["elbow-87"];
+    return productImages["elbow-45"];
+  }
+  
+  if (item.type === "tee") {
+    if (item.angle === "45") return productImages["tee-45"];
+    if (item.angle === "67") return productImages["tee-67"];
+    if (item.angle === "87") return productImages["tee-87"];
+    return productImages["tee-45"];
+  }
+  
+  if (item.type === "cross") return productImages["cross-1plane"];
+  
+  return productImages["pipe"];
+};
 
 interface NomenclatureTableProps {
   items: NomenclatureItem[];
@@ -222,6 +270,7 @@ export function NomenclatureTable({ items, lineName }: NomenclatureTableProps) {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHead className="w-20">Фото</TableHead>
                 <TableHead>Наименование</TableHead>
                 <TableHead>Параметры</TableHead>
                 <TableHead>Артикул</TableHead>
@@ -233,6 +282,16 @@ export function NomenclatureTable({ items, lineName }: NomenclatureTableProps) {
             <TableBody>
               {filteredItems.map((item) => (
                 <TableRow key={item.id}>
+                  <TableCell className="p-2">
+                    <div className="w-16 h-16 bg-muted/30 rounded-lg flex items-center justify-center overflow-hidden">
+                      <img 
+                        src={getProductImage(item)} 
+                        alt={item.name}
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  </TableCell>
                   <TableCell className="font-medium">{item.name}</TableCell>
                   <TableCell className="text-muted-foreground">
                     DN {item.dn}
@@ -290,11 +349,23 @@ export function NomenclatureTable({ items, lineName }: NomenclatureTableProps) {
               key={item.id}
               className="bg-background border border-border rounded-xl p-4"
             >
-              <h3 className="font-medium text-foreground mb-2">{item.name}</h3>
-              <div className="text-sm text-muted-foreground mb-3">
-                DN {item.dn}
-                {item.angle && ` / ${item.angle}°`}
-                {item.length && ` / ${item.length} мм`}
+              <div className="flex gap-4 mb-3">
+                <div className="w-20 h-20 bg-muted/30 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={getProductImage(item)} 
+                    alt={item.name}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-medium text-foreground mb-1">{item.name}</h3>
+                  <div className="text-sm text-muted-foreground">
+                    DN {item.dn}
+                    {item.angle && ` / ${item.angle}°`}
+                    {item.length && ` / ${item.length} мм`}
+                  </div>
+                </div>
               </div>
 
               <div className="flex items-center justify-between mb-3">
