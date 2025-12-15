@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -141,15 +142,15 @@ export function ProductLineCards({ activeCategory, searchQuery }: ProductLineCar
               
               <div className="flex flex-col sm:flex-row gap-2">
                 <Button asChild className="flex-1">
-                  <a href={product.link}>
+                  <Link to={product.link}>
                     Открыть линейку
                     <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
-                  <a href={`/documents/?line=${product.id}`} title="Документы">
+                  <Link to={`/documents/`} title="Документы">
                     <FileText className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>

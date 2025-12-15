@@ -13,49 +13,49 @@ const products = [
   {
     name: "SINIKON Standart",
     description: "Внутренняя канализация",
-    link: "/catalog/vnutrennyaya-kanalizatsiya-sinikon-standart/",
+    link: "/catalog/sinikon-standart/",
     icon: iconStandart,
   },
   {
     name: "Sinikon Comfort Plus",
     description: "Пониженный уровень шума",
-    link: "/catalog/kanalizatsiya-s-ponizhennym-urovnem-shuma-sinikon-comfort-plus/",
+    link: "/catalog/sinikon-comfort-plus/",
     icon: iconComfort,
   },
   {
     name: "Rain Flow",
     description: "Внутренние водостоки",
-    link: "/catalog/vnutrennie-vodostoki-rain-flow/",
+    link: "/catalog/rain-flow/",
     icon: iconRainflow,
   },
   {
     name: "SINIKON Universal",
     description: "Наружная канализация",
-    link: "/catalog/naruzhnaya-kanalizatsiya-sinikon-universal/",
+    link: "/catalog/sinikon-universal/",
     icon: iconUniversal,
   },
   {
     name: "SINIKON НПВХ",
     description: "Наружная канализация НПВХ",
-    link: "/catalog/naruzhnaya-kanalizatsiya-sinikon-npvkh/",
+    link: "/catalog/sinikon-npvh/",
     icon: iconNpvh,
   },
   {
     name: "Трапы",
     description: "Для канализационных систем",
-    link: "/catalog/trapy-dlya-kanalizatsionnykh-sistem/",
+    link: "/catalog/trapy/",
     icon: iconTraps,
   },
   {
     name: "Инструменты и монтаж",
     description: "Крепёж, смазка, инструмент",
-    link: "/catalog/instrumenty-krepyezh-i-smazka/",
+    link: "/catalog/montazh/",
     icon: iconTools,
   },
   {
     name: "Отопление и водоснабжение",
     description: "PE-RT / PE-X / фитинги",
-    link: "/catalog/thermoline-pe-xb-evoh/",
+    link: "/catalog/otoplenie-vodosnabzhenie/",
     icon: iconHeating,
   },
 ];
@@ -126,7 +126,7 @@ export function ProductsSection() {
                 Открыть каталог
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link to="/catalog/pdf/" className="btn-ghost">
+              <Link to="/documents/" className="btn-ghost">
                 Скачать каталог PDF
               </Link>
             </div>

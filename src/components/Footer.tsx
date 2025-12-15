@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const productLinks = [
-  { name: "SINIKON Standart", href: "/catalog/vnutrennyaya-kanalizatsiya-sinikon-standart/" },
-  { name: "Sinikon Comfort Plus", href: "/catalog/kanalizatsiya-s-ponizhennym-urovnem-shuma-sinikon-comfort-plus/" },
-  { name: "Rain Flow", href: "/catalog/vnutrennie-vodostoki-rain-flow/" },
-  { name: "SINIKON Universal", href: "/catalog/naruzhnaya-kanalizatsiya-sinikon-universal/" },
-  { name: "SINIKON НПВХ", href: "/catalog/naruzhnaya-kanalizatsiya-sinikon-npvkh/" },
-  { name: "Трапы", href: "/catalog/trapy-dlya-kanalizatsionnykh-sistem/" },
-  { name: "Инструменты и монтаж", href: "/catalog/instrumenty-krepyezh-i-smazka/" },
-  { name: "Отопление и водоснабжение", href: "/catalog/thermoline-pe-xb-evoh/" },
+  { name: "SINIKON Standart", href: "/catalog/sinikon-standart/" },
+  { name: "Sinikon Comfort Plus", href: "/catalog/sinikon-comfort-plus/" },
+  { name: "Rain Flow", href: "/catalog/rain-flow/" },
+  { name: "SINIKON Universal", href: "/catalog/sinikon-universal/" },
+  { name: "SINIKON НПВХ", href: "/catalog/sinikon-npvh/" },
+  { name: "Трапы", href: "/catalog/trapy/" },
+  { name: "Инструменты и монтаж", href: "/catalog/montazh/" },
+  { name: "Отопление и водоснабжение", href: "/catalog/otoplenie-vodosnabzhenie/" },
 ];
 
 const docsLinks = [
