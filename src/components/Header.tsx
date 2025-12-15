@@ -5,7 +5,7 @@ const navigation = [
   { name: "Продукция", href: "/catalog/" },
   { name: "Проектировщикам", href: "/projectors/" },
   { name: "Документы", href: "#docs" },
-  { name: "Где купить", href: "#buy" },
+  { name: "Где купить", href: "/distributors/" },
   { name: "О компании", href: "/company/" },
   { name: "Новости", href: "#news" },
   { name: "Контакты", href: "/contacts/" },
