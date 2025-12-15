@@ -16,7 +16,7 @@ export function DesignersSection({ onOpenBIM }: DesignersSectionProps) {
       <div className="container-main">
         {/* Header */}
         <div className="mb-12 md:mb-16">
-          <span className="section-number mb-4 block">03</span>
+          <span className="section-number mb-4 block">04</span>
           <h2 className="heading-lg mb-4">Проектировщикам</h2>
           <p className="text-body max-w-2xl">
             BIM-библиотека семейств SINIKON для Autodesk Revit + консультация
