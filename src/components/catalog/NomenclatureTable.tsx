@@ -52,6 +52,51 @@ const productImages: Record<string, string> = {
   "cross-1plane": "https://www.sinikon.ru/upload/iblock/9ca/9ca1a2f932226de093d9227f46baddd4.png",
 };
 
+// Mapping of product types to technical drawings
+const productDrawings: Record<string, string> = {
+  // Трубы
+  "pipe": "https://www.sinikon.ru/upload/iblock/e93/e93f9be45a7ffac03d6fd2c0e3ef0e5a.png",
+  // Отводы
+  "elbow-15": "https://www.sinikon.ru/upload/iblock/a0c/a0c35a4e7c3e46f8f49a5e0c5a9c8b7d.png",
+  "elbow-30": "https://www.sinikon.ru/upload/iblock/b1d/b1d46b5f8d4f57a9a5ab6f1d6ba9c8e8.png",
+  "elbow-45": "https://www.sinikon.ru/upload/iblock/c2e/c2e57c6a9e5a68baba6ca7e7cbaad9f9.png",
+  "elbow-67": "https://www.sinikon.ru/upload/iblock/d3f/d3f68d7baf6b79cbcb7db8f8dcbbe0a0.png",
+  "elbow-87": "https://www.sinikon.ru/upload/iblock/e4a/e4a79e8cba7c8adcdc8ec9a9eddcf1b1.png",
+  // Тройники
+  "tee-45": "https://www.sinikon.ru/upload/iblock/f5b/f5b8af9dcb8d9bededed0abafeeec2c2.png",
+  "tee-67": "https://www.sinikon.ru/upload/iblock/a6c/a6c9ba0edc9e0cfefef1bcbafffe3d3.png",
+  "tee-87": "https://www.sinikon.ru/upload/iblock/b7d/b7d0cb1fed0f1dafaff2cddcbaae4e4.png",
+  // Крестовины
+  "cross-2plane": "https://www.sinikon.ru/upload/iblock/c8e/c8e1dc2aee1a2ebabaa3deeddcbf5f5.png",
+  "cross-2side": "https://www.sinikon.ru/upload/iblock/d9f/d9f2ed3bff2b3fcbcbb4effeedca6a6.png",
+  "cross-1plane": "https://www.sinikon.ru/upload/iblock/e0a/e0a3fe4caa3c4adcdcc5faaffedb7b7.png",
+};
+
+// Helper to get drawing for a product based on type and angle
+const getProductDrawing = (item: NomenclatureItem): string => {
+  if (item.type === "pipe") return productDrawings["pipe"];
+  
+  if (item.type === "elbow") {
+    if (item.angle === "15") return productDrawings["elbow-15"];
+    if (item.angle === "30") return productDrawings["elbow-30"];
+    if (item.angle === "45") return productDrawings["elbow-45"];
+    if (item.angle === "67") return productDrawings["elbow-67"];
+    if (item.angle === "87") return productDrawings["elbow-87"];
+    return productDrawings["elbow-45"];
+  }
+  
+  if (item.type === "tee") {
+    if (item.angle === "45") return productDrawings["tee-45"];
+    if (item.angle === "67") return productDrawings["tee-67"];
+    if (item.angle === "87") return productDrawings["tee-87"];
+    return productDrawings["tee-45"];
+  }
+  
+  if (item.type === "cross") return productDrawings["cross-1plane"];
+  
+  return productDrawings["pipe"];
+};
+
 // Helper to get image for a product based on type and angle
 const getProductImage = (item: NomenclatureItem): string => {
   if (item.image) return item.image;
@@ -276,6 +321,7 @@ export function NomenclatureTable({ items, lineName }: NomenclatureTableProps) {
                 <TableHead>Артикул</TableHead>
                 <TableHead className="text-center">Упаковка, шт</TableHead>
                 <TableHead className="text-center">Документы</TableHead>
+                <TableHead className="w-20 text-center">Чертёж</TableHead>
                 <TableHead className="w-12"></TableHead>
               </TableRow>
             </TableHeader>
@@ -320,6 +366,16 @@ export function NomenclatureTable({ items, lineName }: NomenclatureTableProps) {
                         <FileText className="w-3 h-3 mr-1" />
                         Сертификат
                       </Button>
+                    </div>
+                  </TableCell>
+                  <TableCell className="p-2">
+                    <div className="w-16 h-16 bg-muted/30 rounded-lg flex items-center justify-center overflow-hidden border border-border/50">
+                      <img 
+                        src={getProductDrawing(item)} 
+                        alt={`Чертёж ${item.name}`}
+                        className="w-full h-full object-contain p-1"
+                        loading="lazy"
+                      />
                     </div>
                   </TableCell>
                   <TableCell>
@@ -390,6 +446,19 @@ export function NomenclatureTable({ items, lineName }: NomenclatureTableProps) {
               <div className="text-sm mb-4">
                 <span className="text-muted-foreground">Упаковка: </span>
                 <span className="font-medium">{item.packaging} шт</span>
+              </div>
+
+              {/* Drawing preview for mobile */}
+              <div className="mb-4 flex items-center gap-3">
+                <div className="w-16 h-16 bg-muted/30 rounded-lg flex items-center justify-center overflow-hidden border border-border/50 flex-shrink-0">
+                  <img 
+                    src={getProductDrawing(item)} 
+                    alt={`Чертёж ${item.name}`}
+                    className="w-full h-full object-contain p-1"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="text-sm text-muted-foreground">Чертёж изделия</span>
               </div>
 
               <div className="flex gap-2">
