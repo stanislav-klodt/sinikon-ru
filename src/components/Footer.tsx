@@ -14,7 +14,7 @@ const productLinks = [
 
 const docsLinks = [
   { name: "Сертификаты", href: "/documents/#certificates" },
-  { name: "Гарантия", href: "/documents/#warranty" },
+  { name: "Гарантия", href: "/warranty/" },
   { name: "Материалы", href: "/documents/#promo" },
 ];
 
