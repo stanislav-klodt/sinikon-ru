@@ -1,4 +1,4 @@
-import { Phone, Mail, Globe, MapPin, Clock, Copy, Navigation, Check, Building2 } from 'lucide-react';
+import { Phone, Mail, Globe, MapPin, Copy, Navigation, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import type { Distributor } from '@/data/distributors';
@@ -8,9 +8,8 @@ interface DistributorCardProps {
 }
 
 const typeLabels: Record<string, string> = {
-  wholesale: 'Дистрибьютор',
-  retail: 'Розница',
-  warehouse: 'Склад'
+  wholesale: 'Оптовые продажи',
+  retail: 'Розничные продажи'
 };
 
 export function DistributorCard({ distributor }: DistributorCardProps) {
@@ -34,11 +33,6 @@ export function DistributorCard({ distributor }: DistributorCardProps) {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <h3 className="font-semibold text-lg">{distributor.companyName}</h3>
-            {distributor.pickup && (
-              <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-green-700">
-                Самовывоз
-              </span>
-            )}
           </div>
           <div className="flex items-center gap-2 text-sm">
             <span className="text-primary font-medium">{distributor.city}</span>
@@ -56,12 +50,6 @@ export function DistributorCard({ distributor }: DistributorCardProps) {
           <div className="flex items-start gap-2 text-muted-foreground">
             <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
             <span>{distributor.address}</span>
-          </div>
-        )}
-        {distributor.workingHours && (
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Clock className="w-4 h-4 shrink-0" />
-            <span>{distributor.workingHours}</span>
           </div>
         )}
       </div>
