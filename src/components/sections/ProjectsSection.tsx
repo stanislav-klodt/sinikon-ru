@@ -30,7 +30,7 @@ export function ProjectsSection() {
       <div className="container-main">
         {/* Header */}
         <div className="mb-12 md:mb-16">
-          <span className="section-number mb-4 block">02</span>
+          <span className="section-number mb-4 block">06</span>
           <h2 className="heading-lg mb-4">Наши объекты</h2>
           <p className="text-body max-w-2xl">
             Примеры применения систем SINIKON на крупных объектах.
