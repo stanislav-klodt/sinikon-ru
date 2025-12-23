@@ -108,17 +108,13 @@ export function ProductsSection() {
         <div className="bg-muted/50 border border-border rounded-2xl p-6 md:p-8">
           <div className="grid lg:grid-cols-2 gap-6 items-center">
             <div>
-              <div className="relative mb-4">
+              <div className="relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <input
                   type="text"
-                  placeholder="Поиск по артикулу"
+                  placeholder="Поиск по названию или артикулу"
                   className="w-full pl-12 pr-4 py-3.5 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                 />
-              </div>
-              <div className="text-sm text-muted-foreground space-y-1">
-                <p>В каталоге смотрят: артикул и кол-во в упаковке.</p>
-                <p>Для каждой линейки — быстрые ссылки на документы.</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
