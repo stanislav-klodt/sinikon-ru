@@ -27,7 +27,6 @@ const Warranty = () => {
         <section className="pt-28 pb-16 md:pt-36 md:pb-20 bg-gradient-to-b from-muted/50 to-background">
           <div className="container-main">
             <div className="max-w-3xl">
-              <span className="section-number mb-4 block">Документы</span>
               <h1 className="heading-xl mb-6">Гарантия производителя</h1>
               <p className="text-lg text-muted-foreground">
                 ООО «СИНИКОН» предоставляет расширенную гарантию на всю продукцию собственного производства. 
