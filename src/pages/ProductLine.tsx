@@ -362,18 +362,18 @@ export default function ProductLine() {
           description={data.charDescription}
           characteristics={data.characteristics}
         />
+        {subcategories && (
+          <SubcategoryGrid 
+            subcategories={subcategories.subcategories} 
+            lineSlug={slug || ""} 
+          />
+        )}
         {data.materialInfo && (
           <MaterialInfoSection
             material={data.materialInfo.material}
             sealing={data.materialInfo.sealing}
             connection={data.materialInfo.connection}
             marking={data.materialInfo.marking}
-          />
-        )}
-        {subcategories && (
-          <SubcategoryGrid 
-            subcategories={subcategories.subcategories} 
-            lineSlug={slug || ""} 
           />
         )}
         <LineDocuments
