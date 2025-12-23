@@ -48,7 +48,7 @@ export function LineDocuments({
   instructions,
 }: LineDocumentsProps) {
   return (
-    <section id="documents" className="py-12 md:py-16">
+    <section id="line-documents" className="py-12 md:py-16">
       <div className="container-main">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
           Документы по линейке {lineName}

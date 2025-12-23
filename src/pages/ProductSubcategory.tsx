@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LineDocuments } from "@/components/catalog/LineDocuments";
-import { ChevronRight, Copy, Check } from "lucide-react";
+import { ChevronRight, Copy, Check, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -51,6 +51,13 @@ export default function ProductSubcategory() {
       setTimeout(() => setCopiedId(null), 2000);
     } catch (err) {
       toast.error("Не удалось скопировать");
+    }
+  };
+
+  const scrollToDocuments = () => {
+    const docsSection = document.getElementById("line-documents");
+    if (docsSection) {
+      docsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -162,6 +169,7 @@ export default function ProductSubcategory() {
                         {col.label}
                       </TableHead>
                     ))}
+                    <TableHead className="text-center">Документы</TableHead>
                     <TableHead className="w-24"></TableHead>
                   </TableRow>
                 </TableHeader>
@@ -173,6 +181,28 @@ export default function ProductSubcategory() {
                           {item[col.key as keyof typeof item]}
                         </TableCell>
                       ))}
+                      <TableCell>
+                        <div className="flex justify-center gap-1">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={scrollToDocuments}
+                            className="text-xs"
+                          >
+                            <FileText className="w-3 h-3 mr-1" />
+                            Паспорт
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={scrollToDocuments}
+                            className="text-xs"
+                          >
+                            <FileText className="w-3 h-3 mr-1" />
+                            Сертификат
+                          </Button>
+                        </div>
+                      </TableCell>
                       <TableCell>
                         <Button
                           variant="ghost"
@@ -238,6 +268,26 @@ export default function ProductSubcategory() {
                       <span className="text-muted-foreground">В упаковке</span>
                       <span className="font-medium">{item.packaging} шт</span>
                     </div>
+                  </div>
+                  <div className="flex gap-2 mt-3 pt-3 border-t border-border">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={scrollToDocuments}
+                      className="flex-1"
+                    >
+                      <FileText className="w-3 h-3 mr-1" />
+                      Паспорт
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={scrollToDocuments}
+                      className="flex-1"
+                    >
+                      <FileText className="w-3 h-3 mr-1" />
+                      Сертификат
+                    </Button>
                   </div>
                 </div>
               ))}
