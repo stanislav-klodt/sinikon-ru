@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProductLineHero } from "@/components/catalog/ProductLineHero";
 import { KeyCharacteristics } from "@/components/catalog/KeyCharacteristics";
+import { MaterialInfoSection } from "@/components/catalog/MaterialInfoSection";
 import { NomenclatureTable } from "@/components/catalog/NomenclatureTable";
 import { LineDocuments } from "@/components/catalog/LineDocuments";
 import { RelatedProducts } from "@/components/catalog/RelatedProducts";
@@ -15,6 +16,17 @@ const productLinesData: Record<string, {
   facts: { label: string; value: string }[];
   characteristics: { label: string; value: string }[];
   charDescription: string;
+  materialInfo?: {
+    material: {
+      title: string;
+      description: string;
+      characteristics: { name: string; unit: string; value: string; standard: string }[];
+      color: string;
+    };
+    sealing: { title: string; description: string };
+    connection: { title: string; description: string };
+    marking?: { pipeDescription: string[]; fittingDescription: string[] };
+  };
   nomenclature: any[];
   certificates: any[];
   passports: any[];
@@ -26,18 +38,55 @@ const productLinesData: Record<string, {
     purpose: "Внутренняя канализация",
     description: "Система внутренней канализации. Подбор номенклатуры по типу, диаметру и артикулу.",
     facts: [
-      { label: "Материал", value: "PP (полипропилен)" },
+      { label: "Материал", value: "PP-H (гомополимер пропилена)" },
       { label: "Назначение", value: "Внутренняя канализация" },
-      { label: "Документы", value: "Сертификаты / паспорта / инструкции" },
+      { label: "Стандарт", value: "ГОСТ 32414-2013 / EN 1451-1" },
     ],
-    charDescription: "SINIKON Standart — система внутренней канализации из полипропилена для жилых, общественных и промышленных зданий. Раструбное соединение обеспечивает надёжность и простоту монтажа. Подходит для отведения хозяйственно-бытовых стоков.",
+    charDescription: "SINIKON Standart — система внутренней канализации из полипропилена для жилых, общественных и промышленных зданий. Трубы изготавливаются методом экструзии, а фитинги — методом литья под давлением из гомополимера пропилена (тип 1) PP-H. Раструбное соединение обеспечивает надёжность и простоту монтажа без специальных инструментов.",
     characteristics: [
       { label: "Диаметры", value: "DN 50, 110, 160" },
       { label: "Температурный режим", value: "до +95°C кратковременно" },
+      { label: "Материал", value: "PP-H (гомополимер пропилена, тип 1)" },
       { label: "Соединение", value: "Раструбное с уплотнительным кольцом" },
-      { label: "Цвет", value: "Серый (RAL 7037)" },
-      { label: "Стандарт", value: "ГОСТ 32414-2013" },
+      { label: "Цвет", value: "Серый металлик" },
+      { label: "Стандарт", value: "ГОСТ 32414-2013 / EN 1451-1" },
     ],
+    materialInfo: {
+      material: {
+        title: "Материал",
+        description: "Полипропиленовые канализационные трубы СИНИКОН изготавливаются методом экструзии, а фитинги СИНИКОН — методом литья под давлением из гомополимера пропилена (тип 1) PP-H.",
+        characteristics: [
+          { name: "Плотность", unit: "г/см³", value: "0,9-0,95", standard: "ГОСТ 15139-69" },
+          { name: "Коэффициент линейного расширения", unit: "мм/м °C", value: "0,15", standard: "ГОСТ 15173-70" },
+          { name: "Температура плавления", unit: "°C", value: ">160", standard: "ГОСТ 21553-76" },
+          { name: "Теплопроводность", unit: "Вт/м °C", value: "0,26", standard: "ГОСТ 23630-79" },
+        ],
+        color: "Серый металлик",
+      },
+      sealing: {
+        title: "Уплотнение",
+        description: "Двухлепестковое уплотнение из мягкой стирол бутадиеновой резины (SBR 40±5 IRDH) с пластмассовым (полипропилен PP-H) распорным кольцом. Разработано для пластмассовых труб и фитингов из PP и PVC по нормам EN 1451-1 и EN 14-1-1, соответствует требованиям EN 681-1 WC/WCL и DIN 4060.",
+      },
+      connection: {
+        title: "Способ соединения",
+        description: "Раструбное соединение. Монтаж без применения специальных инструментов и приспособлений.",
+      },
+      marking: {
+        pipeDescription: [
+          "Название серии и наименование изготовителя",
+          "Номинальный наружный диаметр и минимальная толщина стенки трубы в мм",
+          "Материал трубы (полипропилен гомополимер тип 1)",
+          "Номер ГОСТ 32414-2013 и европейского норматива EN 1451-1",
+          "Класс трубы согласно EN 1451",
+        ],
+        fittingDescription: [
+          "Наименование изготовителя и типоразмер фитинга",
+          "Материал фитинга (PP-H)",
+          "Номер ГОСТ 32414-2013 и европейского норматива EN 1451",
+          "Класс фитинга согласно EN 1451",
+        ],
+      },
+    },
     nomenclature: [
       { id: "1", name: "Труба канализационная", type: "pipe", dn: "110", length: "500", article: "500.110.50", packaging: 20 },
       { id: "2", name: "Труба канализационная", type: "pipe", dn: "110", length: "1000", article: "500.110.10", packaging: 10 },
@@ -311,6 +360,14 @@ export default function ProductLine() {
           description={data.charDescription}
           characteristics={data.characteristics}
         />
+        {data.materialInfo && (
+          <MaterialInfoSection
+            material={data.materialInfo.material}
+            sealing={data.materialInfo.sealing}
+            connection={data.materialInfo.connection}
+            marking={data.materialInfo.marking}
+          />
+        )}
         <NomenclatureTable items={data.nomenclature} lineName={data.name} />
         <LineDocuments
           lineName={data.name}
