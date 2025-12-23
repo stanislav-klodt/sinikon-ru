@@ -19,12 +19,18 @@ import Vacancies from "./pages/Vacancies";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
+const getRouterBasename = () => {
+  // In Lovable preview the app is usually served at "/".
+  // On GitHub Pages it is served under "/sinikon-ru".
+  return window.location.pathname.startsWith("/sinikon-ru") ? "/sinikon-ru" : "";
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/sinikon-ru">
+      <BrowserRouter basename={getRouterBasename()}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
