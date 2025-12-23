@@ -14,7 +14,6 @@ const productLinks = [
 
 const docsLinks = [
   { name: "Сертификаты", href: "/documents/#certificates" },
-  { name: "Гарантия", href: "/warranty/" },
   { name: "Материалы", href: "/documents/#promo" },
 ];
 
@@ -97,6 +96,14 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <div className="mt-4 pt-4 border-t border-background/10">
+              <Link
+                to="/warranty/"
+                className="text-sm text-background/70 hover:text-background transition-colors"
+              >
+                Гарантия
+              </Link>
+            </div>
           </div>
 
           {/* Company */}
