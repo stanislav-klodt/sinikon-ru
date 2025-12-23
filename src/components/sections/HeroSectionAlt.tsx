@@ -42,24 +42,6 @@ export function HeroSectionAlt() {
             <br className="hidden md:block" /> и инженерные системы.
           </p>
           
-          {/* Benefits */}
-          <div className="flex flex-wrap gap-4 md:gap-6 mb-8 animate-fade-up delay-150">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 bg-background/10 backdrop-blur-sm border border-background/20 rounded-lg px-4 py-3"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <benefit.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs text-background/70">{benefit.title}</p>
-                  <p className="text-sm font-semibold text-background">{benefit.subtitle}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          
           <Link
             to="/catalog/"
             className="btn-primary inline-flex animate-fade-up delay-200"
@@ -76,6 +58,24 @@ export function HeroSectionAlt() {
             <button className="w-12 h-12 rounded-full border border-background/40 flex items-center justify-center text-background/60 hover:border-background hover:text-background transition-colors">
               <ArrowRight className="w-5 h-5" />
             </button>
+          </div>
+          
+          {/* Benefits */}
+          <div className="flex flex-wrap gap-4 md:gap-6 mt-10 animate-fade-up delay-400">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 bg-background/10 backdrop-blur-sm border border-background/20 rounded-lg px-4 py-3"
+              >
+                <div className="w-10 h-10 rounded-full bg-background/20 flex items-center justify-center">
+                  <benefit.icon className="w-5 h-5 text-background" />
+                </div>
+                <div>
+                  <p className="text-xs text-background/70">{benefit.title}</p>
+                  <p className="text-sm font-semibold text-background">{benefit.subtitle}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
