@@ -1,4 +1,6 @@
 // Subcategory data for product lines
+import trubyView from "@/assets/catalog/truby-kanalizatsionnye-view.png";
+import trubyDrawing from "@/assets/catalog/truby-kanalizatsionnye-drawing.png";
 
 export interface SubcategoryItem {
   id: string;
@@ -33,8 +35,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Трубы канализационные",
         slug: "truby-kanalizatsionnye",
-        image: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
-        drawing: "https://www.sinikon.ru/upload/iblock/e93/e93f9be45a7ffac03d6fd2c0e3ef0e5a.png",
+        image: trubyView,
+        drawing: trubyDrawing,
         description: "Канализационные трубы из полипропилена PP-H для систем внутренней канализации",
         columns: [
           { key: "diameter", label: "Ø" },

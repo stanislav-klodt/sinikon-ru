@@ -113,31 +113,31 @@ export default function ProductSubcategory() {
         {/* Product Image and Drawing */}
         <section className="py-8 md:py-12 bg-muted/30">
           <div className="container-main">
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {/* Product Image */}
-              <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
-                <h3 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wide">
+              <div className="bg-card border border-border rounded-xl p-4 md:p-6">
+                <h3 className="text-sm font-medium text-muted-foreground mb-3 uppercase tracking-wide">
                   Внешний вид
                 </h3>
-                <div className="aspect-square bg-muted/50 rounded-xl flex items-center justify-center">
+                <div className="aspect-[4/3] bg-muted/50 rounded-lg flex items-center justify-center">
                   <img
                     src={subcategoryData.image}
                     alt={subcategoryData.name}
-                    className="w-full h-full object-contain p-8"
+                    className="w-full h-full object-contain p-4"
                   />
                 </div>
               </div>
 
               {/* Technical Drawing */}
-              <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
-                <h3 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wide">
+              <div className="bg-card border border-border rounded-xl p-4 md:p-6">
+                <h3 className="text-sm font-medium text-muted-foreground mb-3 uppercase tracking-wide">
                   Чертёж
                 </h3>
-                <div className="aspect-square bg-muted/50 rounded-xl flex items-center justify-center">
+                <div className="aspect-[4/3] bg-muted/50 rounded-lg flex items-center justify-center">
                   <img
                     src={subcategoryData.drawing}
                     alt={`Чертёж ${subcategoryData.name}`}
-                    className="w-full h-full object-contain p-8"
+                    className="w-full h-full object-contain p-4"
                   />
                 </div>
               </div>
