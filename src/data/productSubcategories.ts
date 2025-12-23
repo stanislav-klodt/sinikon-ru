@@ -33,8 +33,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Трубы канализационные",
         slug: "truby-kanalizatsionnye",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
+        drawing: "https://www.sinikon.ru/upload/iblock/e93/e93f9be45a7ffac03d6fd2c0e3ef0e5a.png",
         description: "Канализационные трубы из полипропилена PP-H для систем внутренней канализации",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -79,8 +79,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Отвод 15°",
         slug: "otvod-15",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/40c/40ca89172e683da7e7e99dd82f9176a9.png",
+        drawing: "https://sinikon.ru/upload/iblock/40c/40ca89172e683da7e7e99dd82f9176a9.png",
         description: "Отводы 15° для изменения направления трубопровода",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -95,8 +95,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Отвод 30°",
         slug: "otvod-30",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/9c4/9c47d0ffa449955ebcd74f23211b8e6f.png",
+        drawing: "https://sinikon.ru/upload/iblock/9c4/9c47d0ffa449955ebcd74f23211b8e6f.png",
         description: "Отводы 30° для изменения направления трубопровода",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -111,8 +111,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Отвод 45°",
         slug: "otvod-45",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/044/044454c1cdae9f3a539d6c1ce530de01.png",
+        drawing: "https://sinikon.ru/upload/iblock/044/044454c1cdae9f3a539d6c1ce530de01.png",
         description: "Отводы 45° для изменения направления трубопровода",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -130,8 +130,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Отвод 67°30'",
         slug: "otvod-67-30",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/166/16606fb8c98020e12774dc61cb148b84.png",
+        drawing: "https://sinikon.ru/upload/iblock/166/16606fb8c98020e12774dc61cb148b84.png",
         description: "Отводы 67°30' для изменения направления трубопровода",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -146,8 +146,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Отвод 87°30'",
         slug: "otvod-87-30",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/f6b/f6bddbef23372d7e5aff136d1f0ad035.png",
+        drawing: "https://sinikon.ru/upload/iblock/f6b/f6bddbef23372d7e5aff136d1f0ad035.png",
         description: "Отводы 87°30' для изменения направления трубопровода",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -165,8 +165,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Тройник 45°",
         slug: "troynik-45",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/2c5/2c51ca637f8b30fa7022fdb9a58b5d18.png",
+        drawing: "https://sinikon.ru/upload/iblock/2c5/2c51ca637f8b30fa7022fdb9a58b5d18.png",
         description: "Тройники 45° для разветвления трубопровода",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -182,8 +182,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Тройник 67°30'",
         slug: "troynik-67-30",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/62c/62c86f34e0a3514bafcd6187e89de82c.png",
+        drawing: "https://sinikon.ru/upload/iblock/62c/62c86f34e0a3514bafcd6187e89de82c.png",
         description: "Тройники 67°30' для разветвления трубопровода",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -199,8 +199,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Тройник 87°30'",
         slug: "troynik-87-30",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/8ef/8ef734149e6ad1114959ea3211427ecb.png",
+        drawing: "https://sinikon.ru/upload/iblock/8ef/8ef734149e6ad1114959ea3211427ecb.png",
         description: "Тройники 87°30' для разветвления трубопровода",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -216,8 +216,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Крестовина двухплоскостная",
         slug: "krestovina-dvukhploskostnaya",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/268/268e8da74fede1a4ed58b1bc9b9d78ae.png",
+        drawing: "https://sinikon.ru/upload/iblock/268/268e8da74fede1a4ed58b1bc9b9d78ae.png",
         description: "Крестовины двухплоскостные для сложных разветвлений",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -232,8 +232,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Крестовина одноплоскостная",
         slug: "krestovina-odnoploskostnaya",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/9ca/9ca1a2f932226de093d9227f46baddd4.png",
+        drawing: "https://sinikon.ru/upload/iblock/9ca/9ca1a2f932226de093d9227f46baddd4.png",
         description: "Крестовины одноплоскостные для разветвления в одной плоскости",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -248,8 +248,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Ревизия",
         slug: "reviziya",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
+        drawing: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
         description: "Ревизии для прочистки и обслуживания канализации",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -264,8 +264,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Переход эксцентрический",
         slug: "perekhod-ekstsentricheskiy",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
+        drawing: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
         description: "Переходы для соединения труб разных диаметров",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -282,8 +282,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Муфта",
         slug: "mufta",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
+        drawing: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
         description: "Муфты для соединения труб",
         columns: [
           { key: "diameter", label: "Ø" },
@@ -298,8 +298,8 @@ export const productSubcategoriesData: Record<string, ProductLineSubcategories> 
       {
         name: "Заглушка",
         slug: "zaglushka",
-        image: "/placeholder.svg",
-        drawing: "/placeholder.svg",
+        image: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
+        drawing: "https://sinikon.ru/upload/iblock/689/689f0628a946aa86745646a9c59526cc.png",
         description: "Заглушки для закрытия концов труб",
         columns: [
           { key: "diameter", label: "Ø" },
