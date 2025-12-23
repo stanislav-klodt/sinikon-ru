@@ -5,13 +5,13 @@ import { Footer } from "@/components/Footer";
 import { BIMModal } from "@/components/BIMModal";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProductsSection } from "@/components/sections/ProductsSection";
+import { QualityGuaranteeSection } from "@/components/sections/QualityGuaranteeSection";
 import { DocsSection } from "@/components/sections/DocsSection";
 import { DesignersSection } from "@/components/sections/DesignersSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { NewsSection } from "@/components/sections/NewsSection";
 import { BuySection } from "@/components/sections/BuySection";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { QualityGuaranteeSection } from "@/components/sections/QualityGuaranteeSection";
 
 const Index = () => {
   const [isBIMOpen, setIsBIMOpen] = useState(false);
