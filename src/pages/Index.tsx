@@ -23,6 +23,9 @@ const Index = () => {
       
       <main>
         <HeroSection />
+        <div className="bg-background py-2 text-center border-y border-border">
+          <span className="text-sm text-muted-foreground">Вариант 2 с преимуществами</span>
+        </div>
         <HeroSectionAlt />
         <ProductsSection />
         <QualityGuaranteeSection />
