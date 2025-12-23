@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Company from "./pages/Company";
 import Catalog from "./pages/Catalog";
 import ProductLine from "./pages/ProductLine";
+import ProductSubcategory from "./pages/ProductSubcategory";
 import Projectors from "./pages/Projectors";
 import Distributors from "./pages/Distributors";
 import Documents from "./pages/Documents";
@@ -41,6 +42,8 @@ const App = () => (
           <Route path="/catalog/" element={<Catalog />} />
           <Route path="/catalog/:slug" element={<ProductLine />} />
           <Route path="/catalog/:slug/" element={<ProductLine />} />
+          <Route path="/catalog/:slug/:subcategory" element={<ProductSubcategory />} />
+          <Route path="/catalog/:slug/:subcategory/" element={<ProductSubcategory />} />
           <Route path="/projectors" element={<Projectors />} />
           <Route path="/projectors/" element={<Projectors />} />
           <Route path="/distributors" element={<Distributors />} />

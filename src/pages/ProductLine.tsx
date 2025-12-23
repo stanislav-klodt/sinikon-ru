@@ -4,9 +4,10 @@ import { Footer } from "@/components/Footer";
 import { ProductLineHero } from "@/components/catalog/ProductLineHero";
 import { KeyCharacteristics } from "@/components/catalog/KeyCharacteristics";
 import { MaterialInfoSection } from "@/components/catalog/MaterialInfoSection";
-import { NomenclatureTable } from "@/components/catalog/NomenclatureTable";
+import { SubcategoryGrid } from "@/components/catalog/SubcategoryGrid";
 import { LineDocuments } from "@/components/catalog/LineDocuments";
 import { RelatedProducts } from "@/components/catalog/RelatedProducts";
+import { productSubcategoriesData } from "@/data/productSubcategories";
 
 // Product line data
 const productLinesData: Record<string, {
@@ -325,6 +326,7 @@ const productLinesData: Record<string, {
 export default function ProductLine() {
   const { slug } = useParams<{ slug: string }>();
   const data = slug ? productLinesData[slug] : null;
+  const subcategories = slug ? productSubcategoriesData[slug] : null;
 
   if (!data) {
     return (
@@ -368,7 +370,12 @@ export default function ProductLine() {
             marking={data.materialInfo.marking}
           />
         )}
-        <NomenclatureTable items={data.nomenclature} lineName={data.name} />
+        {subcategories && (
+          <SubcategoryGrid 
+            subcategories={subcategories.subcategories} 
+            lineSlug={slug || ""} 
+          />
+        )}
         <LineDocuments
           lineName={data.name}
           certificates={data.certificates}
