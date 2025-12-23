@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { MobileBottomBar } from "@/components/MobileBottomBar";
 import { Footer } from "@/components/Footer";
 import { BIMModal } from "@/components/BIMModal";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { HeroSectionAlt } from "@/components/sections/HeroSectionAlt";
 import { ProductsSection } from "@/components/sections/ProductsSection";
 import { QualityGuaranteeSection } from "@/components/sections/QualityGuaranteeSection";
@@ -21,6 +22,7 @@ const Index = () => {
       <Header />
       
       <main>
+        <HeroSection />
         <HeroSectionAlt />
         <ProductsSection />
         <QualityGuaranteeSection />
