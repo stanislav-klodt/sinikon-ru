@@ -13,8 +13,8 @@ import { distributors as allDistributors } from '@/data/distributors';
 
 interface FiltersState {
   federalDistrict: string;
+  region: string;
   types: string[];
-  pickupOnly: boolean;
 }
 
 export default function Distributors() {
@@ -22,8 +22,8 @@ export default function Distributors() {
   const [appliedSearch, setAppliedSearch] = useState('');
   const [filters, setFilters] = useState<FiltersState>({
     federalDistrict: '',
-    types: [],
-    pickupOnly: false
+    region: '',
+    types: []
   });
 
   const filteredDistributors = useMemo(() => {
@@ -43,13 +43,13 @@ export default function Distributors() {
         return false;
       }
 
-      // Type filter
-      if (filters.types.length > 0 && !filters.types.includes(d.type)) {
+      // Region filter
+      if (filters.region && d.region !== filters.region) {
         return false;
       }
 
-      // Pickup filter
-      if (filters.pickupOnly && !d.pickup) {
+      // Type filter
+      if (filters.types.length > 0 && !filters.types.includes(d.type)) {
         return false;
       }
 

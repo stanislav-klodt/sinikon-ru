@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Search, X, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { popularCities } from '@/data/distributors';
 
 interface DistributorsHeroProps {
   searchQuery: string;
@@ -82,22 +81,6 @@ export function DistributorsHero({
               </div>
             )}
 
-            {/* Popular Cities */}
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="text-sm text-muted-foreground">Популярные:</span>
-              {popularCities.map((city) => (
-                <button
-                  key={city}
-                  onClick={() => {
-                    onSearchChange(city);
-                    onSearch();
-                  }}
-                  className="text-sm px-3 py-1 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors"
-                >
-                  {city}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Filter, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,13 +16,12 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Switch } from '@/components/ui/switch';
-import { federalDistricts } from '@/data/distributors';
+import { federalDistricts, distributors } from '@/data/distributors';
 
 interface FiltersState {
   federalDistrict: string;
+  region: string;
   types: string[];
-  pickupOnly: boolean;
 }
 
 interface DistributorsFiltersProps {
@@ -32,16 +31,31 @@ interface DistributorsFiltersProps {
 }
 
 const distributorTypes = [
-  { value: 'wholesale', label: 'Опт / Дистрибьютор' },
-  { value: 'retail', label: 'Розница' },
-  { value: 'warehouse', label: 'Склад' }
+  { value: 'wholesale', label: 'Оптовые продажи' },
+  { value: 'retail', label: 'Розничные продажи' }
 ];
 
 export function DistributorsFilters({ filters, onFiltersChange, resultCount }: DistributorsFiltersProps) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Get unique regions, filtered by selected federal district
+  const availableRegions = useMemo(() => {
+    const regions = distributors
+      .filter(d => !filters.federalDistrict || d.federalDistrict === filters.federalDistrict)
+      .map(d => d.region);
+    return [...new Set(regions)].sort();
+  }, [filters.federalDistrict]);
+
   const handleDistrictChange = (value: string) => {
-    onFiltersChange({ ...filters, federalDistrict: value === 'all' ? '' : value });
+    onFiltersChange({ 
+      ...filters, 
+      federalDistrict: value === 'all' ? '' : value,
+      region: '' // Reset region when district changes
+    });
+  };
+
+  const handleRegionChange = (value: string) => {
+    onFiltersChange({ ...filters, region: value === 'all' ? '' : value });
   };
 
   const handleTypeToggle = (type: string) => {
@@ -51,15 +65,11 @@ export function DistributorsFilters({ filters, onFiltersChange, resultCount }: D
     onFiltersChange({ ...filters, types: newTypes });
   };
 
-  const handlePickupChange = (checked: boolean) => {
-    onFiltersChange({ ...filters, pickupOnly: checked });
-  };
-
   const clearFilters = () => {
-    onFiltersChange({ federalDistrict: '', types: [], pickupOnly: false });
+    onFiltersChange({ federalDistrict: '', region: '', types: [] });
   };
 
-  const hasActiveFilters = filters.federalDistrict || filters.types.length > 0 || filters.pickupOnly;
+  const hasActiveFilters = filters.federalDistrict || filters.region || filters.types.length > 0;
 
   const FilterContent = () => (
     <div className="space-y-6">
@@ -84,6 +94,27 @@ export function DistributorsFilters({ filters, onFiltersChange, resultCount }: D
         </Select>
       </div>
 
+      {/* Region */}
+      <div>
+        <label className="block text-sm font-medium mb-2">Область</label>
+        <Select
+          value={filters.region || 'all'}
+          onValueChange={handleRegionChange}
+        >
+          <SelectTrigger>
+            <SelectValue placeholder="Все области" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Все области</SelectItem>
+            {availableRegions.map((region) => (
+              <SelectItem key={region} value={region}>
+                {region}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
       {/* Distributor Types */}
       <div>
         <label className="block text-sm font-medium mb-3">Тип точки</label>
@@ -98,15 +129,6 @@ export function DistributorsFilters({ filters, onFiltersChange, resultCount }: D
             </label>
           ))}
         </div>
-      </div>
-
-      {/* Pickup Toggle */}
-      <div className="flex items-center justify-between">
-        <label className="text-sm font-medium">Есть самовывоз</label>
-        <Switch
-          checked={filters.pickupOnly}
-          onCheckedChange={handlePickupChange}
-        />
       </div>
 
       {/* Clear Filters */}
@@ -155,7 +177,7 @@ export function DistributorsFilters({ filters, onFiltersChange, resultCount }: D
               Фильтры
               {hasActiveFilters && (
                 <span className="ml-2 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
-                  {(filters.types.length || 0) + (filters.federalDistrict ? 1 : 0) + (filters.pickupOnly ? 1 : 0)}
+                  {(filters.types.length || 0) + (filters.federalDistrict ? 1 : 0) + (filters.region ? 1 : 0)}
                 </span>
               )}
               <ChevronDown className="w-4 h-4 ml-auto" />
