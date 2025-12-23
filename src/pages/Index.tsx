@@ -11,6 +11,7 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { NewsSection } from "@/components/sections/NewsSection";
 import { BuySection } from "@/components/sections/BuySection";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { QualityGuaranteeSection } from "@/components/sections/QualityGuaranteeSection";
 
 const Index = () => {
   const [isBIMOpen, setIsBIMOpen] = useState(false);
@@ -22,6 +23,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <ProductsSection />
+        <QualityGuaranteeSection />
         <BuySection />
         <DocsSection />
         <DesignersSection onOpenBIM={() => setIsBIMOpen(true)} />
