@@ -145,7 +145,7 @@ const Warranty = () => {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <div className="aspect-[4/3] overflow-hidden bg-muted">
+                    <div className="aspect-[16/9] overflow-hidden bg-muted">
                       <img 
                         src={doc.image} 
                         alt={doc.title}
