@@ -4,7 +4,6 @@ import { MobileBottomBar } from "@/components/MobileBottomBar";
 import { Footer } from "@/components/Footer";
 import { BIMModal } from "@/components/BIMModal";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { HeroSectionAlt } from "@/components/sections/HeroSectionAlt";
 import { ProductsSection } from "@/components/sections/ProductsSection";
 import { QualityGuaranteeSection } from "@/components/sections/QualityGuaranteeSection";
 import { DocsSection } from "@/components/sections/DocsSection";
@@ -23,13 +22,9 @@ const Index = () => {
       
       <main>
         <HeroSection />
-        <div className="bg-background py-2 text-center border-y border-border">
-          <span className="text-sm text-muted-foreground">Вариант 2 с преимуществами</span>
-        </div>
-        <HeroSectionAlt />
         <ProductsSection />
-        <QualityGuaranteeSection />
         <BuySection />
+        <QualityGuaranteeSection />
         <DocsSection />
         <DesignersSection onOpenBIM={() => setIsBIMOpen(true)} />
         <NewsSection />
