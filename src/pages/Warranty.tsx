@@ -4,6 +4,8 @@ import { MobileBottomBar } from "@/components/MobileBottomBar";
 import { Shield, CheckCircle, AlertTriangle, FileText, Phone, Download, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import warrantySewageImg from "@/assets/warranty/warranty-sewage.jpg";
+import certificateRosgosstrah1 from "@/assets/warranty/certificate-rosgosstrah-1.png";
+import certificateRosgosstrah2 from "@/assets/warranty/certificate-rosgosstrah-2.png";
 
 const warrantyDocuments = [
   {
@@ -25,15 +27,15 @@ const warrantyDocuments = [
 const insuranceDocuments = [
   {
     id: 1,
-    title: "Страховой полис РОСГОССТРАХ №1",
-    image: warrantySewageImg, // placeholder
-    downloadUrl: warrantySewageImg,
+    title: "Сертификат РОСГОССТРАХ (стр. 1)",
+    image: certificateRosgosstrah1,
+    downloadUrl: certificateRosgosstrah1,
   },
   {
     id: 2,
-    title: "Страховой полис РОСГОССТРАХ №2",
-    image: warrantySewageImg, // placeholder
-    downloadUrl: warrantySewageImg,
+    title: "Сертификат РОСГОССТРАХ (стр. 2)",
+    image: certificateRosgosstrah2,
+    downloadUrl: certificateRosgosstrah2,
   },
 ];
 
@@ -170,7 +172,7 @@ const Warranty = () => {
             </div>
 
             {/* Insurance documents */}
-            <h3 className="text-xl md:text-2xl font-bold mt-12 mb-6">Страховые полисы РОСГОССТРАХ</h3>
+            <h3 className="text-xl md:text-2xl font-bold mt-12 mb-6">Сертификат РОСГОССТРАХ</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {insuranceDocuments.map((doc) => (
                 <a 
