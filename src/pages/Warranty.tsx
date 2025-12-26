@@ -1,8 +1,41 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileBottomBar } from "@/components/MobileBottomBar";
-import { Shield, CheckCircle, AlertTriangle, FileText, Phone } from "lucide-react";
+import { Shield, CheckCircle, AlertTriangle, FileText, Phone, Download, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import warrantySewageImg from "@/assets/warranty/warranty-sewage.jpg";
+
+const warrantyDocuments = [
+  {
+    id: 1,
+    title: "Гарантия на системы канализации",
+    description: "Гарантийное письмо на системы канализации SINIKON с 20-летним сроком гарантии",
+    image: warrantySewageImg,
+    downloadUrl: warrantySewageImg,
+  },
+  {
+    id: 2,
+    title: "Гарантия на трубы PE-X, PE-RT",
+    description: "Гарантийное письмо на трубы и фитинги PE-X, PE-RT с 10-летним сроком гарантии",
+    image: warrantySewageImg, // placeholder, replace when second document is available
+    downloadUrl: warrantySewageImg,
+  },
+];
+
+const insuranceDocuments = [
+  {
+    id: 1,
+    title: "Страховой полис РОСГОССТРАХ №1",
+    image: warrantySewageImg, // placeholder
+    downloadUrl: warrantySewageImg,
+  },
+  {
+    id: 2,
+    title: "Страховой полис РОСГОССТРАХ №2",
+    image: warrantySewageImg, // placeholder
+    downloadUrl: warrantySewageImg,
+  },
+];
 
 const warrantyConditions = [
   "Продукция должна быть установлена в соответствии с национальными техническими нормами, правилами и рекомендациями производителя",
@@ -99,8 +132,73 @@ const Warranty = () => {
           </div>
         </section>
 
-        {/* Conditions */}
+        {/* Warranty Documents Section */}
         <section className="py-16 md:py-20 bg-muted/30">
+          <div className="container-main">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">Гарантийные документы</h2>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              {warrantyDocuments.map((doc) => (
+                <div key={doc.id} className="bg-background border border-border rounded-2xl overflow-hidden group">
+                  <a 
+                    href={doc.downloadUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="aspect-[4/3] overflow-hidden bg-muted">
+                      <img 
+                        src={doc.image} 
+                        alt={doc.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </a>
+                  <div className="p-5">
+                    <h3 className="font-semibold text-lg mb-2">{doc.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{doc.description}</p>
+                    <a 
+                      href={doc.downloadUrl} 
+                      download
+                      className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors"
+                    >
+                      <Download className="w-4 h-4" />
+                      Скачать документ
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Insurance documents */}
+            <h3 className="text-xl md:text-2xl font-bold mt-12 mb-6">Страховые полисы РОСГОССТРАХ</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {insuranceDocuments.map((doc) => (
+                <a 
+                  key={doc.id}
+                  href={doc.downloadUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-background border border-border rounded-xl overflow-hidden group hover:border-primary/50 transition-colors"
+                >
+                  <div className="aspect-[3/4] overflow-hidden bg-muted">
+                    <img 
+                      src={doc.image} 
+                      alt={doc.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-3 text-center">
+                    <p className="text-xs text-muted-foreground">{doc.title}</p>
+                    <ExternalLink className="w-3 h-3 mx-auto mt-1 text-primary" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Conditions */}
+        <section className="py-16 md:py-20">
           <div className="container-main">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Warranty conditions */}
