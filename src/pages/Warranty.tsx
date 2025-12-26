@@ -4,6 +4,7 @@ import { MobileBottomBar } from "@/components/MobileBottomBar";
 import { Shield, CheckCircle, AlertTriangle, FileText, Phone, Download, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import warrantySewageImg from "@/assets/warranty/warranty-sewage.jpg";
+import warrantyPexPertImg from "@/assets/warranty/warranty-pex-pert.png";
 import certificateRosgosstrah1 from "@/assets/warranty/certificate-rosgosstrah-1.png";
 import certificateRosgosstrah2 from "@/assets/warranty/certificate-rosgosstrah-2.png";
 
@@ -19,8 +20,8 @@ const warrantyDocuments = [
     id: 2,
     title: "Гарантия на трубы PE-X, PE-RT",
     description: "Гарантийное письмо на трубы и фитинги PE-X, PE-RT с 10-летним сроком гарантии",
-    image: warrantySewageImg, // placeholder, replace when second document is available
-    downloadUrl: warrantySewageImg,
+    image: warrantyPexPertImg,
+    downloadUrl: warrantyPexPertImg,
   },
 ];
 
