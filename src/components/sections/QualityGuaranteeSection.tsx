@@ -1,4 +1,5 @@
 import { Shield, Award, CheckCircle, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const guaranteeItems = [
   {
@@ -6,6 +7,7 @@ const guaranteeItems = [
     title: "Наша продукция застрахована",
     subtitle: "РОСГОССТРАХ",
     highlight: true,
+    link: "/warranty/",
   },
   {
     icon: Award,
@@ -22,6 +24,7 @@ const guaranteeItems = [
     title: "Гарантия производителя",
     subtitle: "20 лет",
     highlight: true,
+    link: "/warranty/",
   },
 ];
 
@@ -34,28 +37,48 @@ export function QualityGuaranteeSection() {
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {guaranteeItems.map((item, index) => (
-            <div
-              key={index}
-              className="bg-background rounded-xl p-5 md:p-6 flex flex-col items-center text-center border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300"
-            >
-              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4 ${
-                item.highlight 
-                  ? "bg-primary/10 text-primary" 
-                  : "bg-muted text-muted-foreground"
-              }`}>
-                <item.icon className="w-6 h-6 md:w-7 md:h-7" />
+          {guaranteeItems.map((item, index) => {
+            const content = (
+              <>
+                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4 ${
+                  item.highlight 
+                    ? "bg-primary/10 text-primary" 
+                    : "bg-muted text-muted-foreground"
+                }`}>
+                  <item.icon className="w-6 h-6 md:w-7 md:h-7" />
+                </div>
+                <p className="text-sm text-muted-foreground mb-1">
+                  {item.title}
+                </p>
+                <p className={`font-bold text-base md:text-lg ${
+                  item.highlight ? "text-primary" : "text-foreground"
+                }`}>
+                  {item.subtitle}
+                </p>
+              </>
+            );
+
+            if (item.link) {
+              return (
+                <Link
+                  key={index}
+                  to={item.link}
+                  className="bg-background rounded-xl p-5 md:p-6 flex flex-col items-center text-center border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300"
+                >
+                  {content}
+                </Link>
+              );
+            }
+
+            return (
+              <div
+                key={index}
+                className="bg-background rounded-xl p-5 md:p-6 flex flex-col items-center text-center border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300"
+              >
+                {content}
               </div>
-              <p className="text-sm text-muted-foreground mb-1">
-                {item.title}
-              </p>
-              <p className={`font-bold text-base md:text-lg ${
-                item.highlight ? "text-primary" : "text-foreground"
-              }`}>
-                {item.subtitle}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
