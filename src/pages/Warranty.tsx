@@ -147,11 +147,11 @@ const Warranty = () => {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <div className="aspect-[16/9] overflow-hidden bg-muted">
+                    <div className="aspect-[4/3] overflow-hidden bg-muted flex items-center justify-center">
                       <img 
                         src={doc.image} 
                         alt={doc.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   </a>
